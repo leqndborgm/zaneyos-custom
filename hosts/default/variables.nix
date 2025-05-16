@@ -1,13 +1,13 @@
 {
   # Git Configuration ( For Pulling Software Repos )
-  gitUsername = "Tyler Kelley";
-  gitEmail = "tylerzanekelley@gmail.com";
+  gitUsername = "Martin Bothe";
+  gitEmail = "bothe.martin@gmx.de";
 
   # Hyprland Settings
   extraMonitorSettings = "";
 
   # Waybar Settings
-  clock24h = false;
+  clock24h = true;
 
   # Program Options
   browser = "brave"; # Set Default Browser (google-chrome-stable for google-chrome)
@@ -30,7 +30,7 @@
 
   # Set Waybar
   # Includes alternates such as waybar-curved.nix & waybar-ddubs.nix
-  waybarChoice = ../../modules/home/waybar/waybar-simple.nix;
+  waybarChoice = ../../modules/home/waybar/waybar-ddubs.nix;
 
   # Set Animation style
   # Available options are:

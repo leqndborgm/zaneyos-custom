@@ -29,7 +29,7 @@
   stylixImage = ../../wallpapers/AnimeGirlNightSky.jpg;
 
   # Set Waybar
-  # Includes alternates such as waybar-simple.nix & waybar-ddubs.nix
+  # Includes alternates such as waybar-curved.nix & waybar-ddubs.nix
   waybarChoice = ../../modules/home/waybar/waybar-simple.nix;
 
   # Set Animation style
@@ -37,7 +37,7 @@
   # animations-def.nix  (default)
   # animations-end4.nix (end-4 project)
   # animations-dynamic.nix (ml4w project)
-  animChoice = ../../modules/home/hyprland/animations-end4.nix;
+  animChoice = ../../modules/home/hyprland/animations-def.nix;
 
   # Enable Thunar GUI File Manager
   thunarEnable = false;

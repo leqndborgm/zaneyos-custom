@@ -18,7 +18,7 @@ in {
         "windowsOut, 0, 5, winOut, slide"
         "windowsMove, 0, 5, wind, slide"
         "border, 0, 1, liner"
-        "fade, 0, 10, default"
+        "fade, 0, 10, 0"
         "workspaces, 0, 5, wind"
       ];
     };
