@@ -1,6 +1,6 @@
 {
   # Git Configuration ( For Pulling Software Repos )
-  gitUsername = "Martin Bothe";
+  gitUsername = "leqndborgm";
   gitEmail = "bothe.martin@gmx.de";
 
   # Hyprland Settings
