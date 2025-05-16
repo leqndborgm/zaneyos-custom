@@ -69,5 +69,18 @@
         modules = [./profiles/vm];
       };
     };
+
+    packages = {
+      ${system}.spinnycat-plymouth-theme = nixpkgs.legacyPackages.${system}.stdenv.mkDerivation {
+        name = "spinnycat-plymouth-theme";
+        src = ./themes/spinnycat; # <-- this should be the path to your theme folder
+
+        installPhase = ''
+          mkdir -p $out/share/plymouth/themes/spinnycat
+          cp *.plymouth *.script -t $out/share/plymouth/themes/spinnycat
+          cp -r images $out/share/plymouth/themes/spinnycat/
+        '';
+      };
+    };
   };
 }
