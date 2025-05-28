@@ -5,10 +5,9 @@
   config,
   ...
 }: let
-  inherit (import ../../../hosts/${host}/variables.nix) clock 24;
-  in
-    with lib; {
-
+  inherit (import ../../../hosts/${host}/variables.nix) clock24h;
+in
+  with lib; {
     #Configure & Theme Waybar
     programs.waybar = {
       enable = true;
@@ -18,156 +17,153 @@
         {
           layer = "top";
           position = "top";
-          modules-center ) ["clock"];
+          modules-center = ["clock"];
           modules-left = [
-          "custom/home"
-          "audio"
-          "cpu"
-          "diskspace"
-          "memory"
-          "idle_inhibitor"
-          "hyprland/window"
-        ];
-        modules-right =[
-          "custom/notifications"
-          "custom/lock"
-          "battery"
-          "tray"
-          "hyprland/workspaces"
-        ];
+            "custom/home"
+            "audio"
+            "cpu"
+            "diskspace"
+            "memory"
+            "idle_inhibitor"
+            "hyprland/window"
+          ];
+          modules-right = [
+            "custom/notifications"
+            "custom/lock"
+            "battery"
+            "tray"
+            "hyprland/workspaces"
+          ];
 
+          "custom/home" = {
+            tooltip = false;
+            "format" = "🌺";
+            on-click = "sleep 0.15 && rofi-launcher";
+          };
 
+          "audio" = {
+            format = "{icon} {volume}%";
+            format-icons = {
+              default = [
+                "🔇"
+                "🔈"
+                "🔉"
+                "🔊"
+              ];
+            };
+            on-click = "sleep 0.15 && pavucontrol";
+          };
 
-      "custom/home"= {
-        tooltip = false;
-        "format" = "🌺";
-        on-click = "sleep 0.15 && rofi-launcher";
-      };   
+          "cpu" = {
+            intervall = 5;
+            format = " {usage:2}%";
+            tooltip = true;
+          };
 
-      "audio" = {
-        format = "{icon} {volume}%";
-        format-icons = {
-          default = [
-            "🔇"
-            "🔈"
-            "🔉"
-            "🔊"
-          ;]
-        };
-        on-click = "sleep 0.15 && pavucontrol";
-      }; 
+          "diskspace" = {
+            intervall = 5;
+            format = "📥{free}";
+            tooltip = true;
+          };
 
-      "cpu" = {
-        intervall = 5;
-        format = " {usage:2}%";
-        tooltip = true;
-        
-      };
+          "memory" = {
+            intervall = 5;
+            format = "💾{percentage}%";
+            tooltip = true;
+          };
 
-      "diskspace" = {
-        intervall = 5;
-        format = "📥{free}";
-        tooltip = true;
-      };
+          "idle_inhibitor" = {
+            format = "{icon}";
+            format-icons = {
+              activated = "";
+              deactivated = "";
+            };
+            tooltip = "true";
+          };
 
-      "memory" = {
-        intervall = 5;
-        format = "💾{percentage}%";
-        tooltip = true;
-      };
+          "hyprland/windows" = {
+            max-lenght = 22;
+            seperate-outputs = false;
+            rewrite = {
+              "" = "No windows 🤫";
+            };
+          };
 
-      "idle_inhibitor" ={
-        format = "{icon}";
-        format-icons = {
-          activated = "";
-          deactivated = "";
-        };
-        tooltip = "true";
-      };
+          "clock" = {
+            interval = 1;
+            format = "{:%H:%M:%S}";
+            tooltip = true;
+            tooltip-format = "<big>{:%A, %d.%B %Y}</big>\n<tt><small>{calendar}</small></tt>";
+          };
 
-      "hyprland/windows" ={
-        max-lenght = 22;
-        seperate-outputs = false;
-        rewrite = {
-        "" = "No windows 🤫"
-        };
-      };
+          "custom/notifications" = {
+            tooltip = false;
+            format = "{icon} {}";
+            format-icons = {
+              notification = "🔔<span foreground='red'><sup></sup></span>";
+              none = "🔔";
+              dnd-notification = "🔕<span foreground='red'><sup></sup></span>";
+              dnd-none = "🔕";
+              inhibited-notification = "🔔<span foreground='red'><sup></sup></span>";
+              inhibited-none = "🔔";
+              dnd-inhibited-notification = "🔕<span foreground='red'><sup></sup></span>";
+              dnd-inhubuted-none = "🔕";
+            };
+            return-type = "json";
+            exec-if = "swaync-client -swb";
+            on-click = "sleep 0.1 && task-waybar";
+            escape = true;
+          };
 
-      "clock" = {
-        interval = 1;
-        format = "{:%H:%M:%S}";
-        tooltip = true;
-        tooltip-format = "<big>{:%A, %d.%B %Y}</big>\n<tt><small>{calendar}</small></tt>";
-      };
+          "custom/lock" = {
+            format = "🚪";
+            on-click = "sleep 0.15 && wlogout";
+          };
 
-      "custom/notifications" = {
-        tooltip = false;
-        format = "{icon} {}";
-        format-icons = {
-          notification = "🔔<span foreground='red'><sup></sup></span>";
-          none = "🔔";
-          dnd-notification = "🔕<span foreground='red'><sup></sup></span>";
-          dnd-none = "🔕";
-          inhibited-notification = "🔔<span foreground='red'><sup></sup></span>"; 
-          inhibited-none = "🔔"; 
-          dnd-inhibited-notification = "🔕<span foreground='red'><sup></sup></span>"; 
-          dnd-inhubuted-none = "🔕";
-        };
-        return-type = "json";
-        exec-if = "swaync-client -swb";
-        on-click = "sleep 0.1 && task-waybar";
-        escape = true;
-      };
+          "battery" = {
+            states = {
+              warning = 30;
+              critical = 15;
+            };
+            format = "{icon} {capacity}%";
+            format-charging = "🔋{capacity}%";
+            format-plugged = "🔌{capacity}%";
+            format-icons = [
+              "🪫"
+              "🔋"
+            ];
+            on-click = "";
+            tooltip = false;
+          };
 
-      "custom/lock"= {
-        format = "🚪";
-        on-click = "sleep 0.15 && wlogout";
-      };
-      
-      "battery" = {
-        states = {
-          warning = 30;
-          critical = 15;
-        };
-        format = "{icon} {capacity}%";
-        format-charging = "🔋{capacity}%"
-        format-plugged = "🔌{capacity}%";
-        format-icons = [
-          "🪫"
-          "🔋"
-        ];
-        on-click = "";
-        tooltip = false;
-      };
+          "network" = {
+            format-icons = [
+              "󰤯"
+              "󰤟"
+              "󰤢"
+              "󰤥"
+              "󰤨"
+            ];
+            format-ethernet = "{bandwidthDownOctets}";
+            format-wifi = "{icon} {signalStrength}%";
+            tooltip = false;
+          };
 
-      "network" = {
-        format-icons = [
-          "󰤯"
-          "󰤟"
-          "󰤢"
-          "󰤥"
-          "󰤨"
-        ];
-        format-ethernet = "{bandwidthDownOctets}";
-        format-wifi = "{icon} {signalStrength}%";
-        tooltip = false;
-      };
-      
-      "tray" = {
-        spacing = 12:
-      };
+          "tray" = {
+            spacing = 12;
+          };
 
-      "hyprland/workspaces" = { 
-      format = "{name}"; 
-      format-icons = { 
-        default = " "; 
-        active = " "; 
-        urgent = " "; }; 
-      on-scroll-up = "hyprctl dispatch workspace e+1"; 
-      on-scroll-down = "hyprctl dispatch workspace e-1"; 
-      };
+          "hyprland/workspaces" = {
+            format = "{name}";
+            format-icons = {
+              default = " ";
+              active = " ";
+              urgent = " ";
+            };
+            on-scroll-up = "hyprctl dispatch workspace e+1";
+            on-scroll-down = "hyprctl dispatch workspace e-1";
+          };
+        }
+      ];
     };
-
-  ]
-    }
   }
