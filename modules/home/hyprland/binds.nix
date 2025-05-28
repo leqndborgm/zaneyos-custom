@@ -26,7 +26,7 @@ in {
       "$modifier,P,pseudo,"
       "$modifier,V,exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
       "$modifier SHIFT,I,togglesplit,"
-      "$modifier,F,workspaceopt, allfloat,"
+      "$modifier,F,workspaceopt, allfloat"
       "$modifier SHIFT,F,togglefloating,"
       "$modifier ALT,F,fullscreen"
       "$modifier SHIFT,C,exit,"

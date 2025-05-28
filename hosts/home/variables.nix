@@ -29,7 +29,7 @@
   stylixImage = ../../wallpapers/AnimeGirlNightSky.jpg;
 
   # Set Waybar
-  waybarChoice = ../../modules/home/waybar/waybar-simple.nix;
+  waybarChoice = ../../modules/home/waybar/waybar-new.nix;
 
   # Set Animation style
   animChoice = ../../modules/home/hyprland/animations-def.nix;
