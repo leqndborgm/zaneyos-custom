@@ -75,17 +75,16 @@ in
           "idle_inhibitor" = {
             format = "{icon}";
             format-icons = {
-              activated = "";
-              deactivated = "";
+              activated = " ";
+              deactivated = " ";
             };
-            tooltip = "true";
+            tooltip = true;
           };
 
-          "hyprland/windows" = {
-            max-lenght = 22;
+          "hyprland/window" = {
             separate-outputs = false;
             rewrite = {
-              "" = "No windows 🤫";
+              "" = "No windows 🤫 ";
             };
           };
 
@@ -97,22 +96,8 @@ in
           };
 
           "custom/notification" = {
-            tooltip = false;
-            format = "{icon} {}";
-            format-icons = {
-              notification = "🔔<span foreground='red'><sup></sup></span>";
-              none = "🔔";
-              dnd-notification = "🔕<span foreground='red'><sup></sup></span>";
-              dnd-none = "🔕";
-              inhibited-notification = "🔔<span foreground='red'><sup></sup></span>";
-              inhibited-none = "🔔";
-              dnd-inhibited-notification = "🔕<span foreground='red'><sup></sup></span>";
-              dnd-inhibited-none = "🔕";
-            };
-            return-type = "json";
-            exec-if = "swaync-client -swb";
-            on-click = "sleep 0.1 && task-waybar";
-            escape = true;
+            format = "🔔";
+            on-click = "swaync-client -op";
           };
 
           "custom/lock" = {
