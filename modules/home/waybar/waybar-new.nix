@@ -28,7 +28,7 @@ in
             "hyprland/window"
           ];
           modules-right = [
-            "custom/notifications"
+            "custom/notification"
             "custom/lock"
             "battery"
             "tray"
@@ -96,7 +96,7 @@ in
             tooltip-format = "<big>{:%A, %d.%B %Y}</big>\n<tt><small>{calendar}</small></tt>";
           };
 
-          "custom/notifications" = {
+          "custom/notification" = {
             tooltip = false;
             format = "{icon} {}";
             format-icons = {
