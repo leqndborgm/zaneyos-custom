@@ -1,4 +1,10 @@
-{host, ...}: let
+{
+  config,
+  pkgs,
+  inputs,
+  host,
+  ...
+}: let
   inherit (import ../../hosts/${host}/variables.nix) intelID nvidiaID;
 in {
   imports = [
@@ -6,6 +12,7 @@ in {
     ../../modules/drivers
     ../../modules/core
   ];
+
   # Enable GPU Drivers
   drivers.amdgpu.enable = false;
   drivers.nvidia.enable = true;
@@ -15,5 +22,7 @@ in {
     nvidiaBusID = "${nvidiaID}";
   };
   drivers.intel.enable = false;
+
+  # Disable guest additions
   vm.guest-services.enable = false;
 }

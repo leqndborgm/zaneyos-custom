@@ -77,8 +77,13 @@
 
         installPhase = ''
           mkdir -p $out/share/plymouth/themes/spinnycat
-          cp *.plymouth *.script -t $out/share/plymouth/themes/spinnycat
-          cp -r images $out/share/plymouth/themes/spinnycat/
+          cp $src/spinnycat.plymouth \
+          $src/spinnycat.script \
+          $out/share/plymouth/themes/spinnycat/
+
+
+          cp -r $src/images \
+          $out/share/plymouth/themes/spinnycat/
         '';
       };
     };
