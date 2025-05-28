@@ -5,7 +5,7 @@
   config,
   ...
 }: let
-  inherit (import ../../../hosts/${host}/variables.nix) clock24h;
+  inherit (import ../../../hosts/${host}/variables.nix);
 in
   with lib; {
     #Configure & Theme Waybar
@@ -20,9 +20,9 @@ in
           modules-center = ["clock"];
           modules-left = [
             "custom/home"
-            "audio"
+            "pulseaudio"
             "cpu"
-            "diskspace"
+            "disk"
             "memory"
             "idle_inhibitor"
             "hyprland/window"
@@ -41,7 +41,7 @@ in
             on-click = "sleep 0.15 && rofi-launcher";
           };
 
-          "audio" = {
+          "pulseaudio" = {
             format = "{icon} {volume}%";
             format-icons = {
               default = [
@@ -60,14 +60,14 @@ in
             tooltip = true;
           };
 
-          "diskspace" = {
-            intervall = 5;
+          "disk" = {
+            interval = 5;
             format = "📥{free}";
             tooltip = true;
           };
 
           "memory" = {
-            intervall = 5;
+            interval = 5;
             format = "💾{percentage}%";
             tooltip = true;
           };
@@ -83,7 +83,7 @@ in
 
           "hyprland/windows" = {
             max-lenght = 22;
-            seperate-outputs = false;
+            separate-outputs = false;
             rewrite = {
               "" = "No windows 🤫";
             };
@@ -107,7 +107,7 @@ in
               inhibited-notification = "🔔<span foreground='red'><sup></sup></span>";
               inhibited-none = "🔔";
               dnd-inhibited-notification = "🔕<span foreground='red'><sup></sup></span>";
-              dnd-inhubuted-none = "🔕";
+              dnd-inhibited-none = "🔕";
             };
             return-type = "json";
             exec-if = "swaync-client -swb";

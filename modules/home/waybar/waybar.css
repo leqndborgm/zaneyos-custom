@@ -22,7 +22,7 @@ window#waybar {
     margin: 2px 0 0 0;
 }
 .modules-left {
-    margin: 2px 0 0 5px;
+    margin: 2px 0 0 10px;
 	background-color: rgba(0,0,0,0.50);
 }
 /*-----modules indv----*/
@@ -38,7 +38,7 @@ window#waybar {
 #memory,
 #diskspace,
 #network,
-#audio,
+#pulseaudio,
 #custom-media,
 #tray,
 #mode,
@@ -71,9 +71,6 @@ window#waybar {
 	color: #e6e600;
 }
 #battery.critical:not(.charging) {
-    color: #cc3436;
-}
-#temperature.critical {
     color: #cc3436;
 }
 /*-----Colors----*/
