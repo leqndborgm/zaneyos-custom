@@ -1,4 +1,8 @@
-{username, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   programs.hyprlock = {
     enable = true;
     settings = {
@@ -8,38 +12,54 @@
         hide_cursor = true;
         no_fade_in = false;
       };
+
       background = [
         {
-          path = "/home/martinb/Pictures/Wallpapers/caperbunk.jpg";
-          blur_passes = 3;
-          blur_size = 8;
+          path = "${config.home.homeDirectory}/Pictures/Wallpapers/caberpunk.jpg";
+          blur_passes = 2;
+          blur_size = 6;
         }
       ];
+
       image = [
         {
-          path = "/home/martinb/.config/face.jpg";
-          size = 150;
+          path = "${config.home.homeDirectory}/.config/face.jpg";
+          size = 160;
           border_size = 4;
-          border_color = "rgb(0C96F9)";
-          rounding = -1; # Negative means circle
+          border_color = "rgba(255, 85, 255, 0.8)"; # Neon Pink
+          rounding = -1;
           position = "0, 200";
           halign = "center";
           valign = "center";
         }
       ];
+
       input-field = [
         {
-          size = "200, 50";
-          position = "0, -80";
           monitor = "";
+          size = "250, 60";
+          position = "0, -80";
           dots_center = true;
-          fade_on_empty = false;
-          font_color = "rgb(CFE6F4)";
-          inner_color = "rgb(657DC2)";
-          outer_color = "rgb(0D0E15)";
-          outline_thickness = 5;
-          placeholder_text = "Password...";
-          shadow_passes = 2;
+          fade_on_empty = true;
+          font_color = "rgba(255, 255, 255, 0.9)";
+          inner_color = "rgba(255, 0, 255, 0.3)"; # Magenta glow
+          outer_color = "rgba(20, 20, 20, 0.8)"; # Shadowy background
+          outline_thickness = 6;
+          rounding = 12;
+          placeholder_text = "🔒 Enter your passcode...";
+          shadow_passes = 3;
+        }
+      ];
+
+      label = [
+        {
+          text = "$USER";
+          font_family = "JetBrainsMono Nerd Font";
+          font_size = 16;
+          color = "rgba(200, 200, 255, 0.8)";
+          position = "0, 290";
+          halign = "center";
+          valign = "center";
         }
       ];
     };
