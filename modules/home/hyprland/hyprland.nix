@@ -32,6 +32,7 @@ in {
     };
     ".face.icon".source = ./face.jpg;
     ".config/face.jpg".source = ./face.jpg;
+    ".config/caberpunk.jpg".source = ./caberpunk.jpg;
   };
   wayland.windowManager.hyprland = {
     enable = true;

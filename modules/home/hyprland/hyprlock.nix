@@ -13,7 +13,7 @@
 
       background = [
         {
-          path = "${config.home.homeDirectory}/Pictures/Wallpapers/caberpunk.jpg";
+          path = "${config.home.homeDirectory}/.config/caberpunk.jpg";
           blur_passes = 1;
           blur_size = 4;
         }
