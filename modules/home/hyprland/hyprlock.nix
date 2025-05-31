@@ -24,9 +24,9 @@
           path = "${config.home.homeDirectory}/.config/face.jpg";
           size = 160;
           border_size = 4;
-          border_color = "rgba(255, 85, 255, 0.8)"; # Neon Pink
+          border_color = "rgba(110, 80, 180, 0.6)"; # dunkles Violett, leicht transparent
           rounding = -1;
-          position = "0, 200";
+          position = "0, 120"; # etwas tiefer als vorher
           halign = "center";
           valign = "center";
         }
@@ -36,16 +36,16 @@
         {
           monitor = "";
           size = "250, 60";
-          position = "0, -80";
+          position = "0, 210"; # direkt unter dem Profilbild
           dots_center = true;
-          fade_on_empty = true;
-          font_color = "rgba(255, 255, 255, 0.9)";
-          inner_color = "rgba(255, 0, 255, 0.3)"; # Magenta glow
-          outer_color = "rgba(20, 20, 20, 0.8)"; # Shadowy background
-          outline_thickness = 6;
-          rounding = 12;
-          placeholder_text = "🔒 Enter your passcode...";
-          shadow_passes = 3;
+          fade_on_empty = false; # ← zeigt sofort den Hinweistext!
+          placeholder_text = "Enter your passcode...";
+          font_color = "rgba(220, 220, 255, 0.85)";
+          inner_color = "rgba(130, 100, 200, 0.25)";
+          outer_color = "rgba(25, 25, 25, 0.8)";
+          outline_thickness = 5;
+          rounding = 10;
+          shadow_passes = 2;
         }
       ];
 
@@ -55,7 +55,7 @@
           font_family = "JetBrainsMono Nerd Font";
           font_size = 16;
           color = "rgba(200, 200, 255, 0.8)";
-          position = "0, 290";
+          position = "0, 80"; # ↑ jetzt weiter **über** dem Bild
           halign = "center";
           valign = "center";
         }
