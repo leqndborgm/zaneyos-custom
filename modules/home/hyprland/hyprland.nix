@@ -58,7 +58,7 @@ in {
         "pypr &"
         "sleep 1.5 && swww img ${stylixImage}"
         "swww-daemon &"
-        "sleep 1 && ~/zaneyos/modules/home/scripts/wp-rotation.nix"
+        "sleep 1 && ~/.config/hypr/scripts/wp-rotation.sh"
       ];
 
       input = {

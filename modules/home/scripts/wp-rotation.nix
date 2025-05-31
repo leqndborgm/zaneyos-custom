@@ -1,6 +1,5 @@
 {pkgs}:
 pkgs.writeShellScriptBin "wp-rotation" ''
-  #!/usr/bin/env bash
 
   WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
   INTERVAL=300  # Alle 5 Minuten
