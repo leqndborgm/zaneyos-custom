@@ -13,7 +13,7 @@
 
       background = [
         {
-          path = "./lockscreen/caberpunk.jpg";
+          path = "./lockscreen/lockscreen.jpg";
           blur_passes = 1;
           blur_size = 4;
         }
