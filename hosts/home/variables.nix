@@ -23,7 +23,7 @@
   printEnable = false;
 
   # Set Stylix Image
-  stylixImage = ../../wallpapers/caberpunk.jpg;
+  stylixImage = ../../modules/home/hyprland/lockscreen/lockscreen.jpg;
 
   # Set Waybar
   waybarChoice = ../../modules/home/waybar/waybar-new.nix;

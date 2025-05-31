@@ -13,7 +13,7 @@
 
       background = [
         {
-          path = "${config.home.homeDirectory}/zaneyos/modules/home/hyprland/lockscreen/caberpunk.jpg";
+          path = "./lockscreen/caberpunk.jpg";
           blur_passes = 1;
           blur_size = 4;
         }
