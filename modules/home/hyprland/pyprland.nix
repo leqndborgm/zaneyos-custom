@@ -13,6 +13,8 @@
     class = "kitty-dropterm"
     size = "75% 75%"
     max_size = "1920px 100%"
-    position = "150px 150px"
+    position = "center"
+    margin = 20
+    lazy = true
   '';
 }

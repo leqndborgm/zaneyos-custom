@@ -6,9 +6,6 @@
   # Hyprland Settings
   extraMonitorSettings = "";
 
-  # Waybar Settings
-  clock24h = true;
-
   # Program Options
   browser = "brave";
   terminal = "kitty";
@@ -26,13 +23,13 @@
   printEnable = false;
 
   # Set Stylix Image
-  stylixImage = ../../wallpapers/AnimeGirlNightSky.jpg;
+  stylixImage = ../../wallpapers/caberpunk.jpg;
 
   # Set Waybar
   waybarChoice = ../../modules/home/waybar/waybar-new.nix;
 
   # Set Animation style
-  animChoice = ../../modules/home/hyprland/animations-def.nix;
+  animChoice = ../../modules/home/hyprland/animations-dynamic.nix;
 
   # Enable Thunar GUI File Manager
   thunarEnable = false;
