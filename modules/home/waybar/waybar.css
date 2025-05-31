@@ -8,7 +8,7 @@ font-size: 11px;
 }
 
 window#waybar {
-  background: rgba(10, 10, 20, 0.7);
+  background: rgba(10, 10, 20, 0);
  }
 
 .modules-left,
@@ -32,8 +32,8 @@ window#waybar {
 #custom-notification,
 #hyprland-window,
 #workspaces {
-  padding: 0 10px;
-  margin: 0 4px;
+  padding: 0 4px;
+  margin: 0 1px;
 }
 
 /* Clock highlight */

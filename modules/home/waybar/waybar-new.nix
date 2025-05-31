@@ -82,10 +82,10 @@ in
           };
 
           "hyprland/window" = {
-            format = "{}  ";
+            format = "{} ";
             separate-outputs = false;
             rewrite = {
-              "  " = "No windows 🤫 ";
+              " " = "No windows 🤫 ";
             };
           };
 
@@ -134,7 +134,6 @@ in
               "🪫"
               "🔋"
             ];
-            on-click = "";
             tooltip = false;
           };
 
