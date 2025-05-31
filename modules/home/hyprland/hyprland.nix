@@ -32,7 +32,7 @@ in {
     };
     ".face.icon".source = ./face.jpg;
     ".config/face.jpg".source = ./face.jpg;
-    ".config/caberpunk.jpg".source = builtins.toFile "caberpunk.jpg" (builtins.readFile ./caberpunk.jpg);
+    ".config/lockscreen.jpg".source = ./lockscreen/lockscreen.jpg;
   };
   wayland.windowManager.hyprland = {
     enable = true;
