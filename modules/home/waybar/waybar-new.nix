@@ -133,6 +133,7 @@ in
             format-icons = [
               "🪫"
               "🔋"
+              "🔌"
             ];
             tooltip = false;
           };

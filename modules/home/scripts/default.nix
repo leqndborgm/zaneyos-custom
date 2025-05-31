@@ -16,5 +16,6 @@
     (import ./web-search.nix {inherit pkgs;})
     (import ./rofi-launcher.nix {inherit pkgs;})
     (import ./screenshootin.nix {inherit pkgs;})
+    (import ./wp-rotation.nix {inherit pkgs;})
   ];
 }

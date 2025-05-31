@@ -57,6 +57,8 @@ in {
         "nm-applet --indicator"
         "pypr &"
         "sleep 1.5 && swww img ${stylixImage}"
+        "swww-daemon &"
+        "sleep 1 && ~/zaneyos/modules/home/scripts/wp-rotation.nix"
       ];
 
       input = {
