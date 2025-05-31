@@ -32,10 +32,6 @@ in {
     };
     ".face.icon".source = ./face.jpg;
     ".config/face.jpg".source = ./face.jpg;
-    ".config/lockscreen" = {
-      soruce = ./lockscreen;
-      recursive = true;
-    };
   };
   wayland.windowManager.hyprland = {
     enable = true;
