@@ -10,14 +10,14 @@
       };
       background = [
         {
-          path = "/home/${username}/Pictures/Wallpapers/caperbunk.jpg";
+          path = "/home/martinb/Pictures/Wallpapers/caperbunk.jpg";
           blur_passes = 3;
           blur_size = 8;
         }
       ];
       image = [
         {
-          path = "/home/${username}/.config/face.jpg";
+          path = "/home/martinb/.config/face.jpg";
           size = 150;
           border_size = 4;
           border_color = "rgb(0C96F9)";
