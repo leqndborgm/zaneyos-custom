@@ -82,9 +82,10 @@ in
           };
 
           "hyprland/window" = {
+            format = "{}  ";
             separate-outputs = false;
             rewrite = {
-              "" = "No windows 🤫 ";
+              "  " = "No windows 🤫 ";
             };
           };
 
@@ -121,6 +122,7 @@ in
           };
 
           "battery" = {
+            interval = 5;
             states = {
               warning = 30;
               critical = 15;
