@@ -10,7 +10,7 @@
       };
       background = [
         {
-          path = "/home/${username}/zaneyos/wallpapers/edgerunner.jpg";
+          path = "/home/${username}/Pictures/Wallpapers/caberpunk.jpg";
           blur_passes = 3;
           blur_size = 8;
         }
