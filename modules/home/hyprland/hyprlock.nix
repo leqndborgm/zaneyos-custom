@@ -26,7 +26,7 @@
           border_size = 4;
           border_color = "rgba(110, 80, 180, 0.6)"; # dunkles Violett, leicht transparent
           rounding = -1;
-          position = "0, 120"; # etwas tiefer als vorher
+          position = "0, 0";
           halign = "center";
           valign = "center";
         }
@@ -36,7 +36,7 @@
         {
           monitor = "";
           size = "250, 60";
-          position = "0, 210"; # direkt unter dem Profilbild
+          position = "0, 120"; # direkt unter dem Profilbild
           dots_center = true;
           fade_on_empty = false; # ← zeigt sofort den Hinweistext!
           placeholder_text = "Enter your passcode...";
