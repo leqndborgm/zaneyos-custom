@@ -10,7 +10,7 @@
       };
       background = [
         {
-          path = "/home/${username}/Pictures/Wallpapers/caberpunk.jpg";
+          path = "/home/${username}/Pictures/Wallpapers/caperbunk.jpg";
           blur_passes = 3;
           blur_size = 8;
         }
@@ -36,7 +36,7 @@
           fade_on_empty = false;
           font_color = "rgb(CFE6F4)";
           inner_color = "rgb(657DC2)";
-          outer_color = "rgb(191919)";
+          outer_color = "rgb(0D0E15)";
           outline_thickness = 5;
           placeholder_text = "Password...";
           shadow_passes = 2;
