@@ -1,105 +1,88 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   programs.wlogout = {
     enable = true;
+
     layout = [
       {
         label = "shutdown";
-        action = "sleep 1; systemctl poweroff";
+        action = "systemctl poweroff";
         text = "Shutdown";
         keybind = "s";
       }
       {
-        "label" = "reboot";
-        "action" = "sleep 1; systemctl reboot";
-        "text" = "Reboot";
-        "keybind" = "r";
+        label = "reboot";
+        action = "systemctl reboot";
+        text = "Reboot";
+        keybind = "r";
       }
       {
-        "label" = "logout";
-        "action" = "sleep 1; hyprctl dispatch exit";
-        "text" = "Exit";
-        "keybind" = "e";
+        label = "logout";
+        action = "hyprctl dispatch exit";
+        text = "Exit";
+        keybind = "e";
       }
       {
-        "label" = "suspend";
-        "action" = "sleep 1; systemctl suspend";
-        "text" = "Suspend";
-        "keybind" = "u";
-      }
-      {
-        "label" = "lock";
-        "action" = "sleep 1; hyprlock";
-        "text" = "Lock";
-        "keybind" = "l";
-      }
-      {
-        "label" = "hibernate";
-        "action" = "sleep 1; systemctl hibernate";
-        "text" = "Hibernate";
-        "keybind" = "h";
+        label = "lock";
+        action = "hyprlock";
+        text = "Lock";
+        keybind = "l";
       }
     ];
+
     style = ''
       * {
-        font-family: "JetBrainsMono NF", FontAwesome, sans-serif;
-      	background-image: none;
-      	transition: 20ms;
+        font-family: "JetBrainsMono Nerd Font", sans-serif;
+        transition: all 0.3s ease;
+        background-image: none;
       }
+
       window {
-      	background-color: rgba(12, 12, 12, 0.1);
+        background-color: rgba(10, 10, 20, 0.85);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
+
+      #buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+      }
+
       button {
-      	color: #${config.lib.stylix.colors.base05};
-        font-size:20px;
-        background-repeat: no-repeat;
-      	background-position: center;
-      	background-size: 25%;
-      	border-style: solid;
-      	background-color: rgba(12, 12, 12, 0.3);
-      	border: 3px solid #${config.lib.stylix.colors.base05};
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background: transparent;
+        border: none;
+        color: #${config.lib.stylix.colors.base05};
+        font-size: 24px;
+        padding: 20px 80px;
+        border-radius: 9999px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        box-shadow: 0 0 10px rgba(110, 80, 180, 0.2);
+        transform: scale(1);
+        opacity: 0.9;
       }
-      button:focus,
-      button:active,
+
       button:hover {
-        color: #${config.lib.stylix.colors.base0B};
-        background-color: rgba(12, 12, 12, 0.5);
-        border: 3px solid #${config.lib.stylix.colors.base0B};
+        color: #${config.lib.stylix.colors.base0E};
+        background-color: rgba(110, 80, 180, 0.1);
+        box-shadow: 0 0 14px rgba(150, 100, 220, 0.5);
+        transform: scale(1.05);
+        opacity: 1;
       }
-      #logout {
-      	margin: 10px;
-      	border-radius: 20px;
-      	background-image: image(url("icons/logout.png"));
-      }
-      #suspend {
-      	margin: 10px;
-      	border-radius: 20px;
-      	background-image: image(url("icons/suspend.png"));
-      }
-      #shutdown {
-      	margin: 10px;
-      	border-radius: 20px;
-      	background-image: image(url("icons/shutdown.png"));
-      }
-      #reboot {
-      	margin: 10px;
-      	border-radius: 20px;
-      	background-image: image(url("icons/reboot.png"));
-      }
-      #lock {
-      	margin: 10px;
-      	border-radius: 20px;
-      	background-image: image(url("icons/lock.png"));
-      }
-      #hibernate {
-      	margin: 10px;
-      	border-radius: 20px;
-      	background-image: image(url("icons/hibernate.png"));
+
+      button:focus {
+        outline: none;
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgba(150, 100, 220, 0.8);
       }
     '';
-  };
-  home.file.".config/wlogout/icons" = {
-    source = ./icons;
-    recursive = true;
   };
 }
