@@ -8,7 +8,7 @@ in {
   # Styling Options
   stylix = {
     enable = true;
-    targets.plymouth.enable = false;
+    targets.plymouth.enable = true;
     image = stylixImage;
     polarity = "dark";
     opacity.terminal = 1.0;
@@ -35,7 +35,7 @@ in {
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
-      size = 24;
+      size = 18;
     };
 
     fonts = {
