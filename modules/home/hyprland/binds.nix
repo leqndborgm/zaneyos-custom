@@ -22,6 +22,7 @@ in {
       "$modifier,C,exec,hyprpicker -a"
       "$modifier,T,exec,pypr toggle term"
       "$modifier,M,exec,pavucontrol"
+      "$modifier,O,exec,obsidian"
       "$modifier,Q,killactive,"
       "$modifier,P,pseudo,"
       "$modifier,V,exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
