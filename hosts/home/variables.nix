@@ -23,7 +23,7 @@
   printEnable = false;
 
   # Set Stylix Image
-  stylixImage = ../../modules/home/hyprland/lockscreen/lockscreen.jpg;
+  stylixImage = ../../wallpapers/holdingHands.jpg;
 
   # Set Waybar
   waybarChoice = ../../modules/home/waybar/waybar-new.nix;
