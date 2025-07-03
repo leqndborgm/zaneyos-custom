@@ -67,5 +67,6 @@
     wget # Tool For Fetching Files With Links
     yazi #TUI File Manager
     ytmdl # Tool For Downloading Audio From YouTube
+    jetbrains-toolbox
   ];
 }
