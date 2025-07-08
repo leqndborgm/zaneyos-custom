@@ -33,6 +33,7 @@
     eza # Beautiful ls Replacement
     ffmpeg # Terminal Video / Audio Editing
     file-roller # Archive Manager
+    firefox
     gedit # Simple Graphical Text Editor
     gimp # Great Photo Editor
     glxinfo #needed for inxi diag util
@@ -68,5 +69,11 @@
     yazi #TUI File Manager
     ytmdl # Tool For Downloading Audio From YouTube
     jetbrains-toolbox
+    gcc
+    cmake
+    gdb
+    clang
+    sqlite
+    sqlitebrowser
   ];
 }
