@@ -25,17 +25,14 @@
     brave # Brave Browser
     brightnessctl # For Screen Brightness Control
     cliphist # Clipboard manager using rofi menu
+    clamav #antivirus
     cmatrix # Matrix Movie Effect In Terminal
-    cowsay # Great Fun Terminal Program
     direnv #Direnv for presentation tool
     docker-compose # Allows Controlling Docker From A Single File
     duf # Utility For Viewing Disk Usage In Terminal
     eza # Beautiful ls Replacement
-    ffmpeg # Terminal Video / Audio Editing
     file-roller # Archive Manager
-    firefox
-    gedit # Simple Graphical Text Editor
-    gimp # Great Photo Editor
+    firefox # Supports Firefox
     glxinfo #needed for inxi diag util
     greetd.tuigreet # The Login Manager (Sometimes Referred To As Display Manager)
     htop # Simple Terminal Based System Monitor
@@ -55,16 +52,13 @@
     obsidian #for better organising
     pavucontrol # For Editing Audio Levels & Devices
     pciutils # Collection Of Tools For Inspecting PCI Devices
-    picard # For Changing Music Metadata & Getting Cover Art
     pkg-config # Wrapper Script For Allowing Packages To Get Info On Others
     playerctl # Allows Changing Media Volume Through Scripts
-    rhythmbox
     ripgrep # Improved Grep
     socat # Needed For Screenshots
     unrar # Tool For Handling .rar Files
     unzip # Tool For Handling .zip Files
     usbutils # Good Tools For USB Devices
-    v4l-utils # Used For Things Like OBS Virtual Camera
     wget # Tool For Fetching Files With Links
     yazi #TUI File Manager
     ytmdl # Tool For Downloading Audio From YouTube
@@ -75,5 +69,9 @@
     clang
     sqlite
     sqlitebrowser
+    lutris # Gaming-/Anwendungs-Manager
+    wineWowPackages.stable # 32- & 64-Bit Wine
+    winetricks # zum Installieren von Windows-DLLs
+    wineasio # ASIO-Support für Audio
   ];
 }
