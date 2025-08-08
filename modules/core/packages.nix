@@ -34,7 +34,7 @@
     file-roller # Archive Manager
     firefox # Supports Firefox
     glxinfo #needed for inxi diag util
-    greetd.tuigreet # The Login Manager (Sometimes Referred To As Display Manager)
+    tuigreet # The Login Manager (Sometimes Referred To As Display Manager)
     htop # Simple Terminal Based System Monitor
     hyprpicker # Color Picker
     eog # For Image Viewing
@@ -73,5 +73,6 @@
     wineWowPackages.stable # 32- & 64-Bit Wine
     winetricks # zum Installieren von Windows-DLLs
     wineasio # ASIO-Support für Audio
+    vesktop
   ];
 }
