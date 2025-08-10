@@ -15,6 +15,7 @@ in {
       "$modifier SHIFT,N,exec,swaync-client -rs"
       "$modifier,W,exec,${browser}"
       "$modifier,Y,exec,kitty -e yazi"
+      "$modifier,N,exec,nemo"
       "$modifier,E,exec,emopicker9000"
       "$modifier,S,exec,steam"
       "$modifier,A,exec,flatpak run org.prismlauncher.PrismLauncher"

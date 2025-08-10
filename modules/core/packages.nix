@@ -48,6 +48,7 @@
     ncdu # Disk Usage Analyzer With Ncurses Interface
     nixfmt-rfc-style # Nix Formatter
     nwg-displays #configure monitor configs via GUI
+    nemo # File Manager
     onefetch #provides zsaneyos build info on current system
     obsidian #for better organising
     pavucontrol # For Editing Audio Levels & Devices
