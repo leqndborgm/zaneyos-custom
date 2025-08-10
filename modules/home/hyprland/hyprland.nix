@@ -137,6 +137,11 @@ in {
         };
       };
 
+      layerrule = [
+        "blur, waybar" # Blur hinter Waybar aktivieren
+        "ignorealpha 0.6, waybar" # sorgt dafür, dass Semi-Transparency korrekt wirkt
+      ];
+
       cursor = {
         sync_gsettings_theme = true;
         no_hardware_cursors = 2; # change to 1 if want to disable

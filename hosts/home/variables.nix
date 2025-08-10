@@ -26,7 +26,7 @@
   stylixImage = ../../wallpapers/holdingHands.jpg;
 
   # Set Waybar
-  waybarChoice = ../../modules/home/waybar/waybar-new.nix;
+  waybarChoice = ../../modules/home/waybar/waybar-alt.nix;
 
   # Set Animation style
   animChoice = ../../modules/home/hyprland/animations-dynamic.nix;

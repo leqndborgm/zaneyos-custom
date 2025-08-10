@@ -11,22 +11,22 @@ in
     programs.waybar = {
       enable = true;
       package = pkgs.waybar;
-      style = ./style-alt.css;
-
+      style = ./waybar.css;
       settings = [
         {
           layer = "top";
           position = "top";
 
-          modules-center = ["clock"];
           modules-left = [
             "custom/home"
             "pulseaudio"
             "cpu"
-            "memory"
             "disk"
+            "memory"
+            "idle_inhibitor"
             "hyprland/window"
           ];
+          modules-center = ["clock"];
           modules-right = [
             "custom/notification"
             "custom/lock"
@@ -52,19 +52,28 @@ in
             interval = 5;
             format = " {usage:2}%";
           };
+          "disk" = {
+            interval = 5;
+            format = "📥{free}";
+          };
           "memory" = {
             interval = 5;
             format = "💾{percentage}%";
           };
-          "disk" = {
-            interval = 5;
-            format = "📦 {free}";
+
+          "idle_inhibitor" = {
+            format = "{icon}";
+            format-icons = {
+              activated = "";
+              deactivated = "";
+            };
+            tooltip = true;
           };
 
           "hyprland/window" = {
-            format = "{} ";
+            format = "{}";
             separate-outputs = false;
-            rewrite = {" " = "No windows 🤫 ";};
+            rewrite = {"^$" = "No windows 🤫";};
             max-length = 60;
           };
 
@@ -103,6 +112,7 @@ in
             format = "{icon} {capacity}%";
             format-charging = "🔌{capacity}%";
             format-icons = ["🪫" "🔋"];
+            tooltip = false;
           };
 
           "network" = {
@@ -111,14 +121,12 @@ in
             tooltip = false;
           };
 
-          "tray" = {spacing = 12;};
+          "tray" = {spacing = 10;};
 
           "hyprland/workspaces" = {
             format = "{name}";
-            on-click = "hyprctl dispatch workspace {name}";
             on-scroll-up = "hyprctl dispatch workspace e+1";
             on-scroll-down = "hyprctl dispatch workspace e-1";
-            active-only = false;
           };
         }
       ];

@@ -1,46 +1,40 @@
-/* ===== Farbpalette aus dem Bild ===== */
-@define-color bg rgba(30,30,30,0.60);      /* semi-transparent */
-@define-color pill rgba(255,255,255,0.07); /* Module-Hintergrund */
+/* ---- Farben (nur noch für Text-Akzente, kein Hintergrund mehr) ---- */
 @define-color text #ffffff;
-@define-color c-blue  #4fd0ff;  /* Haare */
-@define-color c-pink  #ff9fd6;  /* Strähnen */
-@define-color c-yellow #ffe14f; /* Ärmel */
+@define-color c-blue  #4fd0ff;
+@define-color c-pink  #ff9fd6;
+@define-color c-yellow #ffe14f;
 
-/* ===== Basis ===== */
+/* ---- Basis ---- */
 * {
   font-family: "JetBrainsMono Nerd Font", monospace;
   font-size: 14px;
   color: @text;
 }
 
+/* Bar komplett transparent, kein Rand/Strich */
 window#waybar {
-  background: @bg;
-  backdrop-filter: blur(12px);
-  border-bottom: 2px solid @c-blue;
-  padding: 6px 8px;
+  background-color: transparent;
+  border: none;
+  padding: 4px 6px; /* gern auch 0 0, wenn du es ganz bündig willst */
 }
 
-/* Jede Kachel/Pill */
+/* Container enger zusammen, damit links/rechts wie „aus einem Guss“ wirken */
+.modules-left, .modules-center, .modules-right {
+  padding: 0;
+  margin: 0;
+}
+
+/* Module ohne Kacheln/Box-Shadows – nur Text */
 #clock, #cpu, #memory, #disk, #battery, #network, #pulseaudio,
-#custom-home, #custom-lock, #custom-notification, #tray, #window,
-#workspaces {
-  background: @pill;
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 14px;
-  padding: 6px 10px;
-  margin: 0 6px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+#tray, #window, #workspaces, #custom-home, #custom-lock, #custom-notification, #idle_inhibitor {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin: 0;            /* keine Lücken mehr zwischen den Modulen */
+  padding: 0 8px;       /* minimaler horizontaler Abstand */
 }
 
-/* sanfter Glow beim Hover */
-#clock:hover, #cpu:hover, #memory:hover, #disk:hover, #battery:hover,
-#network:hover, #pulseaudio:hover, #custom-home:hover, #custom-lock:hover,
-#custom-notification:hover, #tray:hover, #window:hover {
-  box-shadow: 0 0 12px rgba(79,208,255,0.35);
-  border-color: @c-blue;
-}
-
-/* Akzentfarben pro Modul */
+/* dezente Farbakzente pro Modul (nur Textfarbe) */
 #clock { color: @c-yellow; font-weight: 700; }
 #cpu { color: @c-blue; }
 #memory { color: @c-pink; }
@@ -50,43 +44,15 @@ window#waybar {
 #pulseaudio { color: @c-yellow; }
 #custom-lock { color: @c-pink; }
 #custom-notification { color: @c-blue; }
-#custom-home { font-size: 18px; }
+#custom-home { padding-left: 4px; }
 
-/* Fenster-Titel: ellipsis + etwas Platz */
-#window {
-  min-width: 220px;
-}
-
-/* ===== Workspaces als Pill-Leiste ===== */
-#workspaces {
-  padding: 4px 6px;
-}
+/* Workspaces als schlichte Text-Badges ohne Kasten */
 #workspaces button {
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: none;
   color: @text;
-  padding: 4px 10px;
-  margin: 0 4px;
-  border-radius: 12px;
+  padding: 0 6px;
+  margin: 0;
 }
-
-#workspaces button:hover {
-  border-color: @c-blue;
-  box-shadow: 0 0 8px rgba(79,208,255,0.35);
-}
-
-/* aktiver Workspace => neonblauer Ring + Glow */
-#workspaces button.active {
-  border-color: @c-blue;
-  box-shadow: 0 0 10px rgba(79,208,255,0.45);
-}
-
-/* urgent => pink, sichtbar */
-#workspaces button.urgent {
-  border-color: @c-pink;
-  box-shadow: 0 0 10px rgba(255,159,214,0.50);
-}
-
-/* ===== Tray etwas kompakter ===== */
-#tray { padding-right: 6px; }
-
+#workspaces button.active { color: @c-blue; }
+#workspaces button.urgent { color: @c-pink; }
