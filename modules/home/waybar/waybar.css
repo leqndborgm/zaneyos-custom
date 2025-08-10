@@ -1,31 +1,57 @@
+/************************************
+  Farbdefinitionen
+ ************************************/
+@define-color fg              #dcdcff;
+@define-color bg-surface      rgba(20, 20, 30, 0.40);
 
+@define-color accent          rgba(110, 80, 180, 1.0);
+@define-color accent-80       rgba(110, 80, 180, 0.80);
+@define-color accent-40       rgba(110, 80, 180, 0.40);
+@define-color accent-30       rgba(110, 80, 180, 0.30);
+@define-color accent-20       rgba(110, 80, 180, 0.20);
+
+@define-color green-strong    #66ff99;
+@define-color green-soft      #88ffbb;
+@define-color yellow          #ffe066;
+@define-color red             #ff4444;
+@define-color red-soft        #ff5555;
+@define-color pink-muted      #ff5580;
+
+/************************************
+  Grundlayout
+ ************************************/
 * {
   border: none;
   font-family: JetBrainsMono Nerd Font, Font Awesome, sans-serif;
-  font-size: 11px;
-  color: #dcdcff;
-  border-radius: 14px;
+  font-size: 10px;                 
+  color: @fg;
+  border-radius: 6px;              
   min-height: 0;
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0);
-  border-bottom: 0px solid rgba(110, 80, 180, 0.5);
-  box-shadow: 0 0 10px rgba(110, 80, 180, 0.3);
-
-
+  background: transparent;
+  border-bottom: 0px solid @accent-80;
+  box-shadow: 0 0 10px @accent-30;
+  padding: 2px 2px;                
 }
 
+/************************************
+  Container (links, mitte, rechts)
+ ************************************/
 .modules-left,
 .modules-center,
 .modules-right {
-  background-color: rgba(20, 20, 30, 0.4);
+  background-color: @bg-surface;
   margin: 2px 4px;
-  padding: 3px 6px;
-  border-radius: 8px;
-  box-shadow: inset 0 0 6px rgba(110, 80, 180, 0.3);
+  padding: 1px 6px;                 
+  border-radius: 5px;               
+  box-shadow: inset 0 0 6px @accent-30;
 }
 
+/************************************
+  Abstände
+ ************************************/
 #clock,
 #battery,
 #cpu,
@@ -45,65 +71,66 @@ window#waybar {
   margin: 0 4px;
 }
 
-/* Clock highlight */
+/************************************
+  Module Styles
+ ************************************/
+
+/* Uhr */
 #clock {
   font-weight: bold;
   color: #c5a3ff;
 }
 
-/* Battery states */
-#battery.charging {
-  color: #88ffbb;
-}
-#battery.warning:not(.charging) {
-  color: #ffe066;
-}
-#battery.critical:not(.charging) {
-  color: #ff4444;
-}
+/* Batterie-Zustände */
+#battery.charging { color: @green-soft; }
+#battery.warning:not(.charging) { color: @yellow; }
+#battery.critical:not(.charging) { color: @red; }
 
-/* Audio muted */
-#pulseaudio.muted {
-  color: #ff5580;
-}
+/* Audio stumm */
+#pulseaudio.muted { color: @pink-muted; }
 
-/* Idle inhibitor active */
-#idle_inhibitor.activated {
-  color: #66ff99;
-}
+/* Idle-Inhibitor aktiv */
+#idle_inhibitor.activated { color: @green-strong; }
 
-/* Custom modules hover */
+/* Custom-Module Hover-Effekt */
 #custom-home:hover,
 #custom-lock:hover,
 #custom-notification:hover {
-  background-color: rgba(110, 80, 180, 0.2);
-  box-shadow: inset 0 0 4px rgba(150, 100, 200, 0.4);
+  background-color: @accent-20;
+  box-shadow: inset 0 0 4px @accent-80;
 }
 
-/* Workspaces */
+/************************************
+  Workspaces
+ ************************************/
 #workspaces button {
-  padding: 4px 6px;
+  padding: 2px 6px;                 
   margin: 2px;
   background-color: transparent;
   border: 1px solid transparent;
-}
-#workspaces button.focused {
-  background-color: rgba(110, 80, 180, 0.4);
-  border: 1px solid rgba(130, 100, 200, 0.8);
-}
-#workspaces button.urgent {
-  color: #ff5555;
-}
-#workspaces button:hover {
-  background-color: rgba(110, 80, 180, 0.2);
+  border-radius: 5px;
 }
 
-/* Tray icons */
-#tray > .passive {
-  opacity: 0.5;
+#workspaces button.active {
+  background-color: @accent-40;
+  border: 1px solid @accent-80;
 }
+
+#workspaces button.urgent { color: @red-soft; }
+#workspaces button:hover { background-color: @accent-20; }
+
+/************************************
+  Tray
+ ************************************/
+#tray > .passive { opacity: 0.5; }
+
 #tray > .needs-attention {
-  background-color: #ff5555;
+  background-color: @red-soft;
   color: #ffffff;
 }
 
+
+#tray > * {
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
