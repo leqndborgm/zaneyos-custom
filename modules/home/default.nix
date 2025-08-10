@@ -13,7 +13,6 @@ in {
     ./gh.nix
     ./ghostty.nix
     ./git.nix
-    ./gtk.nix
     ./htop.nix
     ./hyprland
     ./kitty.nix
@@ -23,6 +22,7 @@ in {
     ./scripts
     ./starship.nix
     ./stylix.nix
+    ./stylix-home.nix
     ./swappy.nix
     ./swaync.nix
     ./virtmanager.nix
