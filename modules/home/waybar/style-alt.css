@@ -1,0 +1,92 @@
+/* ===== Farbpalette aus dem Bild ===== */
+@define-color bg rgba(30,30,30,0.60);      /* semi-transparent */
+@define-color pill rgba(255,255,255,0.07); /* Module-Hintergrund */
+@define-color text #ffffff;
+@define-color c-blue  #4fd0ff;  /* Haare */
+@define-color c-pink  #ff9fd6;  /* Strähnen */
+@define-color c-yellow #ffe14f; /* Ärmel */
+
+/* ===== Basis ===== */
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 14px;
+  color: @text;
+}
+
+window#waybar {
+  background: @bg;
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid @c-blue;
+  padding: 6px 8px;
+}
+
+/* Jede Kachel/Pill */
+#clock, #cpu, #memory, #disk, #battery, #network, #pulseaudio,
+#custom-home, #custom-lock, #custom-notification, #tray, #window,
+#workspaces {
+  background: @pill;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  padding: 6px 10px;
+  margin: 0 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+
+/* sanfter Glow beim Hover */
+#clock:hover, #cpu:hover, #memory:hover, #disk:hover, #battery:hover,
+#network:hover, #pulseaudio:hover, #custom-home:hover, #custom-lock:hover,
+#custom-notification:hover, #tray:hover, #window:hover {
+  box-shadow: 0 0 12px rgba(79,208,255,0.35);
+  border-color: @c-blue;
+}
+
+/* Akzentfarben pro Modul */
+#clock { color: @c-yellow; font-weight: 700; }
+#cpu { color: @c-blue; }
+#memory { color: @c-pink; }
+#disk { color: #cfd3d6; }
+#battery { color: @c-blue; }
+#network { color: @c-pink; }
+#pulseaudio { color: @c-yellow; }
+#custom-lock { color: @c-pink; }
+#custom-notification { color: @c-blue; }
+#custom-home { font-size: 18px; }
+
+/* Fenster-Titel: ellipsis + etwas Platz */
+#window {
+  min-width: 220px;
+}
+
+/* ===== Workspaces als Pill-Leiste ===== */
+#workspaces {
+  padding: 4px 6px;
+}
+#workspaces button {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: @text;
+  padding: 4px 10px;
+  margin: 0 4px;
+  border-radius: 12px;
+}
+
+#workspaces button:hover {
+  border-color: @c-blue;
+  box-shadow: 0 0 8px rgba(79,208,255,0.35);
+}
+
+/* aktiver Workspace => neonblauer Ring + Glow */
+#workspaces button.active {
+  border-color: @c-blue;
+  box-shadow: 0 0 10px rgba(79,208,255,0.45);
+}
+
+/* urgent => pink, sichtbar */
+#workspaces button.urgent {
+  border-color: @c-pink;
+  box-shadow: 0 0 10px rgba(255,159,214,0.50);
+}
+
+/* ===== Tray etwas kompakter ===== */
+#tray { padding-right: 6px; }
+
