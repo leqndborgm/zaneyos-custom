@@ -17,7 +17,7 @@
     ./syncthing.nix
     ./system.nix
     ./thunar.nix
-    ./tuigreet
+    ./tuigreet.nix
     ./user.nix
     ./virtualisation.nix
     ./xserver.nix
