@@ -3,7 +3,6 @@
     ./boot.nix
     ./flatpak.nix
     ./fonts.nix
-    ./greetd.nix
     ./hardware.nix
     ./network.nix
     ./nfs.nix
@@ -18,6 +17,7 @@
     ./syncthing.nix
     ./system.nix
     ./thunar.nix
+    ./tuigreet
     ./user.nix
     ./virtualisation.nix
     ./xserver.nix
