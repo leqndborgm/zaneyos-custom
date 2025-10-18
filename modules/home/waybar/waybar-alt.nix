@@ -116,7 +116,7 @@ in
           };
 
           "network" = {
-            format-wifi = " {signalStrength}%";
+            format-wifi = "{signalStrength}%";
             format-ethernet = "󰈁";
             tooltip = false;
           };

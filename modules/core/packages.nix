@@ -26,6 +26,7 @@
     brightnessctl # For Screen Brightness Control
     cliphist # Clipboard manager using rofi menu
     clamav # Antivirus
+    lutris
     clamtk # Antivirus Frontend
     cmatrix # Matrix Movie Effect In Terminal
     direnv #Direnv for presentation tool
@@ -69,5 +70,6 @@
     gdb
     clang
     vesktop # Better Discord
+    wine
   ];
 }
