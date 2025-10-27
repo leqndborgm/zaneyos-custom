@@ -1,5 +1,5 @@
 {
-  description = "leqnd's ZaneyOS-custom";
+  description = "leqnd's NixOS-config";
 
   inputs = {
     home-manager = {

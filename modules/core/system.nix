@@ -26,10 +26,7 @@ in {
     LC_TELEPHONE = "de_DE.UTF-8";
     LC_TIME = "de_DE.UTF-8";
   };
-  environment.variables = {
-    ZANEYOS_VERSION = "2.3";
-    ZANEYOS = "false";
-  };
+
   console.keyMap = "${consoleKeyMap}";
   system.stateVersion = "23.11"; # Do not change!
 }
