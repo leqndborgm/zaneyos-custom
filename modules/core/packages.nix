@@ -70,6 +70,5 @@
     gdb
     clang
     vesktop # Better Discord
-    wine
   ];
 }
