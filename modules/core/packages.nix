@@ -35,6 +35,7 @@
     file-roller # Archive Manager
     firefox # Firefox
     glxinfo #needed for inxi diag util
+    gemini-cli # Googles AI assistant
     tuigreet # The Login Manager (Sometimes Referred To As Display Manager)
     htop # Simple Terminal Based System Monitor
     hyprpicker # Color Picker
@@ -56,6 +57,7 @@
     pciutils # Collection Of Tools For Inspecting PCI Devices
     pkg-config # Wrapper Script For Allowing Packages To Get Info On Others
     playerctl # Allows Changing Media Volume Through Scripts
+    php #php language
     ripgrep # Improved Grep
     socat # Needed For Screenshots
     unrar # Tool For Handling .rar Files
